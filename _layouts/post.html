@@ -5,6 +5,12 @@ title:  "POSTS"
 
 {%- if page.detail_image -%}<img class="detail_header" src="{{ page.detail_image }}">{%- endif -%}
 
-<h1>{{ page.post-title }}</h1>
-
-{{ content }}
+<article>
+  <h2>
+    <a href="{{ page.url }}">
+    {{ page.title }}
+    </a>
+  </h2>
+  <time datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date_to_long_string }}</time>
+  {{ content }}
+</article>
